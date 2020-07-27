@@ -1,0 +1,37 @@
+package com.LinkedList;
+
+class node{
+	public int value;
+	public Node next;
+	public Node(int value){
+		this.value= value;
+	}
+}
+ class LinkedList {
+	 public Node first;
+	 public Node last;
+	 public void addLast(int item) {
+		 
+	 }
+	 
+ }
+
+public class LinkedlistExcercise1 {
+
+	public static void main(String[] args) {
+
+var a = first;
+var b = first;
+if(first==last)
+throw new IllegalStateException();
+while (b != last && b.next != last)
+{
+b = b.next.next;
+a = a.next;
+}
+if (b==last)
+System.out.println(a.value);
+else
+System.out.println(a.value + "," + a.next.value);
+	}
+}

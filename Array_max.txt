@@ -1,0 +1,77 @@
+package com.notations;
+
+class Array {
+	private int[] items;
+	private int count;
+
+	public Array(int length) {
+		items = new int[length];
+	}
+
+	public void insert(int item) {
+		items[count++] = item;
+	}
+
+	public void print() {
+		for (int i = 0; i < count; i++) {
+			System.out.println(items[i]);
+		}
+	}
+            
+		public int max(){  
+		int temp;  
+		for (int k = 0; k < count; k++)   
+		        {  
+		            for (int j = k + 1; j < count; j++)   
+		            {  
+		                if (items[k] > items[j])   
+		                {  
+		                    temp = items[k];  
+		                    items[k] = items[j];  
+		                    items[j] = temp;  
+		                }  
+		            }  
+		        }  
+		       return items[count-1];  
+		}  
+	
+	
+	
+	public void removeAt(int index) {
+		if (index < 0 || index >= count - 1)
+			throw new IllegalArgumentException();
+		for (int i = index; i < count - 1; i++) {
+			items[i] = items[i + 1];
+		}
+		count--;
+	}
+
+	public int indexOf(int item) {
+		for (int i = 0; i < count; i++) {
+			if (items[i] == item)
+				return i;
+		}
+		return -1;
+	}
+}
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Array numbers = new Array(3);
+		numbers.insert(100);
+		numbers.insert(200);
+		numbers.insert(300);
+		numbers.print();
+		System.out.println("Index of Element : " + numbers.indexOf(1200));
+
+		numbers.removeAt(0);
+		numbers.print();
+		System.out.println("the highest digit is" + numbers.max());
+		
+
+	}
+
+}
+

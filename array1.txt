@@ -1,0 +1,68 @@
+package com.notations;
+
+class Array {
+	public int[] items;
+	public int count1;
+
+	public Array(int length) {
+		items = new int[length];
+	}
+
+	public void insert(int item) {
+		items[count1++] = item;
+		public void print() {
+			for (int i = 0; i < count1; i++) {
+				System.out.println(items[i]);
+			}
+	}
+}
+class Array2 {
+	public int[] items2;
+	public int count2;
+
+	public Array2(int length2) {
+		items2 = new int[length2];
+	}
+
+	public void insert2(int item) {
+		items2[count2++] = item;
+	}
+	public void print() {
+		for (int i = 0; i < count2; i++) {
+			System.out.println(items2[i]);
+		}
+		
+	}
+}
+
+public int intersect() {
+	int temp;
+	for(int i=0 ;i < count1 ;i++) {
+		for(int j=0;j < count2;j++) {
+			if(items[i] =  items2[j]) {
+				temp=items2[j];
+				System.out.println("the common element is"+ temp);
+			}
+			
+		}
+	}
+		
+}
+public class ArrayDemo2 {
+
+	public  void main(String[] args) {
+		Array numbers = new Array(4);
+		Array2 numbers2 = new Array2(3);
+		numbers.insert(100);
+		numbers.insert(200);
+		numbers.insert(300);
+		numbers.insert(900);
+		numbers2.insert2(400);
+		numbers2.insert2(500);
+		numbers2.insert2(300);
+		numbers.print();
+		numbers2.print();
+		numbers.print();
+		System.out.println("the common digit is" + intersect());
+	}
+}
